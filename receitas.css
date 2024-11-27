@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+*{text-decoration: none;
+ margin: 0;padding: 0;}
+
+
+body{min-height:100vh ;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-row: auto 1fr auto;
+    grid-template-areas: 
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+
+/*header*/
+header{grid-area: header; background-color: white;
+    width: 100%;
+    height: 100px}
+
+
+.header-brand{font-family:'Kosugi Maru', sans-serif;
+    font-size: 24px;
+    color: #111;
+    font-weight:800;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;   } 
+
+/*header nav bar*/
+header nav ul { display: block;
+    margin: 0 auto;
+    width: fit-content;
+
+}
+
+header nav ul li { 
+    display: inline-block;
+    
+    list-style: none;
+    padding: 0 16px;
+    
+}
+
+header nav ul li a { font-family:'Kosugi Maru', sans-serif;
+    font-size: 16px;
+    color: #111; 
+    
+}
+
+
+/*media only(desktop version)*/
+@media only screen and (min-width:1000px){ 
+
+    .header-brand{
+    
+        margin: 2vh 0;
+        text-align:left;
+        line-height:5vh;
+        padding: 1vh  ;
+        border-right: 3px solid black;
+        float:left;} 
+
+        header nav ul { display: block;
+            margin: 4vh ;
+           float: left;
+        
+        }
+        
+        
+        header nav ul li a {  
+            line-height: 2vh;
+            font-size: 22px;
+            
+        }
+
+    }
+/*aside*/
+
+aside{grid-area: sidebar; background-color: beige;  top: 0; height:calc(100vh -100px) ; align-self: self-start; }
+aside  p{ font-size: 22px; line-height:4.5vh ; }
+aside h1{padding: 4.5vh;}
+/*main*/
+
+main{grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    padding: 20px;
+    text-align: left;
+    
+}
+.main-images{display: grid; justify-items: center; }
+.main-images img{width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 2px;
+
+}
+.text-receitas{display: block;
+    font-size: 22px;
+    line-height: 4.5vh;
+
+}
+.text-receitas h1 {margin-bottom: 10px;}
+
+
+
+
+footer{grid-area: footer ;
+     width:calc(100% - 80px);
+     padding: 40px 40px;
+     background-color: #111;
+      margin-top:20px; 
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+               
+
+
+}
+footer ul {width: fit-content; float: left; padding-left: 5px ;}
+
+footer ul li{display: block;
+    list-style: none;
+    }
+    footer ul li a{font-family:'Kosugi Maru', sans-serif;
+        font-size: 22px;
+        color:  #f7f4f4; 
+        line-height:  20px; 
+    }
+    .footer-sm{ width: 60px;;
+        float: right;}
+    
+        .footer-sm img{ width: 100%;
+            
+        }
+
+            
+        
+
+    #iarecipe{width:20vh;
+        height: 20vh;}
+
+
+/*media(desktop only version)*/
+@media only screen and (min-width:1000px){
+    .footer-sm{  padding-right: 20vh;}
+
+    }
+
+
+
+
+/*media para telas menores*/
+    @media (max-width: 800px)
+    {  grid-template-columns:  1fr;
+        grid-template-areas: 
+        "header"
+        "sidebar"
+        "main"
+        "footer" ;
+    aside{height: auto;
+    width: 100%;
+    }
+    aside h1{padding: 3vh;}
+    aside p { font-size: 18px ; line-height: 4vh;}
+    
+    footer{grid-template-columns: 1fr; 
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+
+    }
+    footer ul li{grid-template-columns: 1fr; text-align: left;
+        }
+    
+    footer ul li a{font-size: 18px;}
+    .footer-sm{ justify-self: center;
+        float: none;
+    }
+
+    main{grid-template-columns: 1fr;}
+    .main-images img{width: 80%;}
+    #iaecipe{width: 14vh ; height: 15vh;}
+  
+}
+
+/*media para telemoveis*/
+@media (max-width: 480px){
+    grid-template-columns:  1fr;
+    grid-template-areas: 
+    "header"
+    "sidebar"
+    "main"
+    "footer" ;
+
+.text-receitas p{font-size: 12px; line-height: 9vh;}
+.text-receitas h1{font-size: 14px;}
+
+aside{height: auto;
+    width: 100%;}
+aside p{font-size: 12px; line-height: 6vh;}
+aside h1{ padding: 2vh; font-size: 16px;}
+
+main{padding: 10px;}
+#iareceitas{width: 10vh; height: 10vh; }
+main h1{font-size: 14px;}
+main p{font-size: 12px;}
+body{grid-template-columns: 1fr;}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
